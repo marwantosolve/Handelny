@@ -1,0 +1,40 @@
+[project]
+name = "api"
+version = "0.1.0"
+description = "FastAPI backend for Handelny"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi[standard]",
+    "uvicorn",
+    "sqlalchemy>=2.0",
+    "alembic",
+    "asyncpg",
+    "pydantic-settings",
+    "python-jose[cryptography]",
+    "passlib[bcrypt]",
+    "python-multipart",
+    "celery[redis]",
+    "qdrant-client",
+    "sentence-transformers",
+    "google-genai",
+    "pymupdf",
+    "lingua-language-detector"
+]
+
+[dependency-groups]
+dev = [
+    "pytest",
+    "pytest-asyncio",
+    "httpx",
+    "ruff",
+    "mypy"
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
