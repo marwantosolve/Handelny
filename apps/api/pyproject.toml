@@ -19,7 +19,10 @@ dependencies = [
     "sentence-transformers",
     "google-genai",
     "pymupdf",
-    "lingua-language-detector"
+    "lingua-language-detector",
+    "aioboto3",
+    "tiktoken",
+    "email-validator",
 ]
 
 [dependency-groups]
