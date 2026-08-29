@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from qdrant_client import QdrantClient
 from sqlalchemy import text
 
+from app.api.v1.router import api_router
 from app.core.config import settings
 from app.core.db import engine
 from app.core.exceptions import AppError, app_error_handler, unhandled_error_handler
@@ -51,7 +52,5 @@ async def health_check():
         "checks": checks,
     }
 
-
-from app.api.v1.router import api_router  # noqa: E402
 
 app.include_router(api_router, prefix="/api/v1")
